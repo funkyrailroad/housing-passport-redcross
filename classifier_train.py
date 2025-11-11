@@ -24,7 +24,7 @@ def main(name, img_dir, data_dir):
     dm = BuildingDataModule(
         img_dir=img_dir,
         data_dir=data_dir,
-        batch_size=32, # 128,
+        batch_size=16, # 128,
         num_workers=8,
     )
     dm.setup()
