@@ -6,11 +6,13 @@ import torchmetrics
 import lightning as L
 from torchvision import models
 from timm.layers import NormMlpClassifierHead
+from huggingface_hub import PyTorchModelHubMixin
+
 
 from src.loss import FocalLoss
 
 
-class HPClassifier(L.LightningModule):
+class RCClassifier(L.LightningModule, PyTorchModelHubMixin):
     def __init__(
         self,
         lr=1e-3,
